@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: random-py-service
+spec:
+  type: ClusterIP
+  selector:
+    app: random-py 
+  ports:
+    - protocol: TCP
+      targetPort: 8082 
+      port: 2101

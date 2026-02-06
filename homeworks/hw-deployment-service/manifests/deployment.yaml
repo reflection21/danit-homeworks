@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-py-deployment
+  labels:
+    app: random-py
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: random-py
+  template:
+    metadata:
+      labels:
+        app: random-py
+    spec:
+      containers:
+      - name: random-python-app
+        image: sweaty1111/random-py:1.0.0
+        ports:
+        - containerPort: 8082
